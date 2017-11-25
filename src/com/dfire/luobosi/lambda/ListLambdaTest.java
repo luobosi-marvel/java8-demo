@@ -8,6 +8,7 @@ import org.junit.Test;
 
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.IntSummaryStatistics;
 import java.util.List;
 import java.util.stream.Collector;
 import java.util.stream.Collectors;
@@ -52,6 +53,23 @@ public class ListLambdaTest {
                 .collect(Collectors.toList());
         // 遍历
         strings.forEach(System.out::println);
+    }
+
+    /**
+     * 计算集合元素的最大值、最小值、总和\平均值以及个数
+     */
+    @Test
+    public void java8ListCalculate() {
+        //获取数字的个数、最小值、最大值、总和以及平均值
+        List<Integer> primes = Arrays.asList(2, 3, 5, 7, 11, 13, 17, 19, 23, 29);
+        // 使用java8 中的方法操作集合
+        IntSummaryStatistics statistics = primes.stream().mapToInt((x) -> x).summaryStatistics();
+
+        System.out.println("Highest prime number in List : " + statistics.getMax());
+        System.out.println("Lowest prime number in List : " + statistics.getMin());
+        System.out.println("Sum of all prime numbers : " + statistics.getSum());
+        System.out.println("Average of all prime numbers : " + statistics.getAverage());
+        System.out.println("Count of all prime numbers : " + statistics.getCount());
     }
 
 }
