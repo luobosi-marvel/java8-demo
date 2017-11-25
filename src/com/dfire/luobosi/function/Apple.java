@@ -20,4 +20,11 @@ public class Apple {
     public String getColor() {
         return color;
     }
+
+    @Override
+    public String toString() {
+        return "Apple{" +
+                "color='" + color + '\'' +
+                '}';
+    }
 }
