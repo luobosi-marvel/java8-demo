@@ -7,10 +7,8 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.IntSummaryStatistics;
 import java.util.List;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 /**
@@ -57,6 +55,11 @@ public class ListLambdaTest {
 
     /**
      * 计算集合元素的最大值、最小值、总和\平均值以及个数
+     *
+     * IntStream、LongStream 和 DoubleStream 等流的类中，有个非常有用的方法叫做 summaryStatistics() 。
+     * 可以返回 IntSummaryStatistics、LongSummaryStatistics 或者 DoubleSummaryStatistic s，描述流中元
+     * 素的各种摘要数据。在本例中，我们用这个方法来计算列表的最大值和最小值。它也有 getSum() 和
+     * getAverage() 方法来获得列表的所有元素的总和及平均值。
      */
     @Test
     public void java8ListCalculate() {
