@@ -22,5 +22,15 @@ public class Constants {
         int DISABLED = 1;
     }
 
+    public interface Color {
+        /** 绿色 */
+        String GREEN = "green";
+        /** 红色 */
+        String RED = "red";
+        /** 黄色 */
+        String YELLOW = "yellow";
+        /** 蓝色 */
+        String BLUE = "blue";
+    }
 
 }
