@@ -6,6 +6,7 @@ package com.dfire.luobosi.lambda;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.IntSummaryStatistics;
 import java.util.List;
@@ -37,6 +38,17 @@ public class ListLambdaTest {
         // 使用 Java 8 的方法引用更方便，方法引用由 :: 双冒号操作符表示，
         // 看起来像 C++ 的作用域解析运算符
         strLists.forEach(System.out::println);
+    }
+
+    /**
+     * 把一个集合里面的元素添加到另一个集合里面
+     */
+    @Test
+    public void listToList() {
+        List<String> list = new ArrayList<>();
+
+        strLists.forEach(n -> list.add(n));
+        list.forEach(System.out::println);
     }
 
     /**

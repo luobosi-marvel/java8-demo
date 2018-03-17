@@ -3,9 +3,12 @@
  */
 package com.dfire.luobosi.calendar;
 
+import org.junit.Test;
+
 import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.time.Month;
+import java.util.Date;
 
 /**
  * LocalDateDemo
@@ -69,4 +72,10 @@ public class LocalDateDemo {
         System.out.println(localDate1);
     }
 
+
+    @Test
+    public void test() {
+        long l = System.currentTimeMillis() / 1000;
+        System.out.println(l);
+    }
 }
