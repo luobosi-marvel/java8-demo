@@ -5,6 +5,7 @@ package com.dfire.luobosi.calendar;
 
 import org.junit.Test;
 
+import java.text.SimpleDateFormat;
 import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.time.Month;
@@ -77,5 +78,22 @@ public class LocalDateDemo {
     public void test() {
         long l = System.currentTimeMillis() / 1000;
         System.out.println(l);
+    }
+
+
+    /**
+     * 将时间戳转换为时间
+     */
+    @Test
+    public void stampToDate() {
+        String res;
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        long lt = new Long(1522671048911L);
+        Date date = new Date(lt);
+        res = simpleDateFormat.format(date);
+
+        System.out.println(res);
+
+        System.out.println(LocalDate.now().toString());
     }
 }

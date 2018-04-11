@@ -59,6 +59,16 @@ public class ListLambdaTest {
     public void java8ListFilter() {
         List<String> strings = strLists
                 .stream()
+                .filter(str -> "Marvel".equals(str))
+                .collect(Collectors.toList());
+        // 遍历
+        strings.forEach(System.out::println);
+    }
+
+    @Test
+    public void java8ListFilter1() {
+        List<String> strings = strLists
+                .stream()
                 .filter(str -> "Lambdas".equals(str) || "Stream API".equals(str))
                 .collect(Collectors.toList());
         // 遍历
@@ -86,5 +96,7 @@ public class ListLambdaTest {
         System.out.println("Average of all prime numbers : " + statistics.getAverage());
         System.out.println("Count of all prime numbers : " + statistics.getCount());
     }
+
+
 
 }
