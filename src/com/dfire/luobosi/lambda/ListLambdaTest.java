@@ -23,9 +23,15 @@ public class ListLambdaTest {
     /** list 集合对象 */
     private List<String> strLists;
 
+    private List<User> userList;
+
+    private List<Integer> ageList;
+
     @Before
     public void init() {
         this.strLists = Arrays.asList("Lambdas", "Default Method", "Stream API", "Date and Time API");
+        this.userList = Arrays.asList(new User("marvel", 22), new User("luobosi", 23), new User("naitang", 21), new User("xueliu", 21));
+        this.ageList = Arrays.asList(1, 2 , 3, 4, 5, 6, 7, 8);
     }
 
     /**
@@ -71,8 +77,21 @@ public class ListLambdaTest {
                 .stream()
                 .filter(str -> "Lambdas".equals(str) || "Stream API".equals(str))
                 .collect(Collectors.toList());
+        System.out.println("=======================");
+        strLists.forEach(System.out::println);
+        System.out.println("=======================");
         // 遍历
         strings.forEach(System.out::println);
+    }
+
+    @Test
+    public void java8ListFilter2() {
+        List<User> users = userList
+                .stream()
+                .filter(user -> user.getAge().equals(21))
+                .collect(Collectors.toList());
+        // 遍历
+        users.forEach(System.out::println);
     }
 
     /**
@@ -97,6 +116,14 @@ public class ListLambdaTest {
         System.out.println("Count of all prime numbers : " + statistics.getCount());
     }
 
-
+    @Test
+    public void testJava8() {
+        ageList.forEach(age -> {
+            if (age.equals(2)) {
+                return;
+            }
+            System.out.println(age);
+        });
+    }
 
 }
