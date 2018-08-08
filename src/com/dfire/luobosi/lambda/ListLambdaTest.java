@@ -126,4 +126,17 @@ public class ListLambdaTest {
         });
     }
 
+
+    @Test
+    public void testThreadLocal() {
+        ThreadLocal threadLocal = new ThreadLocal<Integer>();
+        threadLocal.set(1);
+
+        System.out.println(threadLocal.get());
+        int i = 0;
+        while (i < 2) {
+            new Thread(() -> System.out.println(threadLocal.get())).start();
+            i++;
+        }
+    }
 }
