@@ -25,6 +25,7 @@ public class LocalDateDemo {
     public static void main(String[] args) {
         // 获取当前日期 2018-3-16
         LocalDate localDate = LocalDate.now();
+        System.out.println(localDate.toString());
         // 获取年份
         int year = localDate.getYear();
         // 获取当前这一天是今天中的第几天
