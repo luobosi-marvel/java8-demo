@@ -83,7 +83,7 @@ public class LocalDateDemo {
 
 
     /**
-     * 将时间戳转换为时间
+     * 将时间戳转换为时间对象
      */
     @Test
     public void stampToDate() {
